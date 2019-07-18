@@ -20,6 +20,7 @@ from pages.views import home_view, contact_view, about_view, imagine_view, socia
 
 urlpatterns = [
     path('', home_view, name='home'),
+    path('home/', home_view, name='home'),
     path('contact/', contact_view),
     path('about/', about_view),
     path('imagine/', imagine_view),
