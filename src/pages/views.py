@@ -28,10 +28,5 @@ def imagine_view(request, *args, **kwargs):
 def social_view(request, *args, **kwargs):
         return render(request, "social.html", {})
 
-# def product_create_view(request, *args, **kwargs):
-#         return render(request, "product_create.html", {})
 
-
-# def product_detail_view(request, *args, **kwargs):
-#         return render(request, "product_detail.html", {})
 
