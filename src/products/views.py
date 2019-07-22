@@ -1,8 +1,31 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
+from .forms import ProductForm 
+from .models import Product
 
-# Create your views here.
-#a place that handles my various webpages
 
-# def home_view(*args, **kwargs):
-#         return HttpResponse("<h1> this is my turf, I am what the word says I am</h1>")
+def product_create_view(request):
+        form = ProductForm(request.POST or None)
+        if form.is_valid():
+                form.save()
+
+        # obj = Product.objects.get(id=1)
+        # context = { 
+        #         'title': obj.title,
+        #         'description' : obj.description       
+        # }
+        context = {
+                'form' : form
+        }
+        return render (request, "products/product_create.html", context)
+
+def product_detail_view(request):
+        obj = Product.objects.get(id=1)
+        # context = { 
+        #         'title': obj.title,
+        #         'description' : obj.description       
+        # }
+        context = {
+                'object' : obj
+        }
+        return render (request, "products/product_detail.html", context)

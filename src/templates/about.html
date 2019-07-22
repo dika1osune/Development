@@ -4,4 +4,13 @@
 <h1>Hello World</h1>
 
 <p>This is the about page</p>
-        {% endblock %}
+<p>
+        {{ my_text}} , {{ my_address}}
+</p>
+
+<ul>
+{% for my_sub_item in my_list %}
+<li>{{ forloop.counter }} - {{ my_sub_item }} </li>
+{% endfor %}
+</ul>
+{% endblock content %}
